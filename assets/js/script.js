@@ -127,7 +127,7 @@
   }
 
   /* ---------- Active nav link highlighting ---------- */
-  const sections = ['about', 'skills', 'experience', 'projects', 'achievements', 'contact']
+  const sections = ['about', 'skills', 'projects', 'assistant', 'experience', 'achievements', 'contact']
     .map(id => document.getElementById(id))
     .filter(Boolean);
 
@@ -144,6 +144,30 @@
       });
     }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
     sections.forEach(s => sio.observe(s));
+  }
+
+  /* ---------- AI QA Assistant: prompt switching ---------- */
+  const promptBtns = document.querySelectorAll('.prompt-btn');
+  const chatQ = document.getElementById('chat-q');
+  const chatA = document.getElementById('chat-a');
+
+  if (promptBtns.length && chatQ && chatA) {
+    promptBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const q = btn.dataset.q || '';
+        const a = btn.dataset.a || '';
+        promptBtns.forEach(b => b.classList.toggle('is-active', b === btn));
+        // Animate change
+        chatQ.classList.remove('msg-typing');
+        chatA.classList.remove('msg-typing');
+        // Force reflow so animation re-runs
+        void chatQ.offsetWidth; void chatA.offsetWidth;
+        chatQ.textContent = q;
+        chatA.innerHTML = '<div class="msg-inner">' + a + '</div>';
+        chatQ.classList.add('msg-typing');
+        chatA.classList.add('msg-typing');
+      });
+    });
   }
 
   /* ---------- Footer year ---------- */
