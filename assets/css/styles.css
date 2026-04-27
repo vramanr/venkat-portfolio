@@ -337,6 +337,63 @@ section { padding: 110px 0; position: relative; }
   .hero .container { max-width: 1120px; }
 }
 
+/* ===== Featured banner ===== */
+.featured { padding: 40px 0 60px; }
+.featured-figure {
+  position: relative; padding: 0; overflow: hidden;
+  border-radius: var(--radius-xl);
+  aspect-ratio: 16 / 7;
+  margin: 0;
+  background:
+    radial-gradient(120% 100% at 0% 0%, rgba(139,92,246,.45), transparent 60%),
+    radial-gradient(120% 100% at 100% 100%, rgba(6,182,212,.35), transparent 60%),
+    #0d0d18;
+}
+.featured-figure img {
+  width: 100%; height: 100%; object-fit: cover; object-position: center;
+  display: block;
+  transition: transform .8s var(--ease);
+}
+.featured-figure:hover img { transform: scale(1.02); }
+.featured-figure::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(7,7,13,0) 55%, rgba(7,7,13,.85) 100%);
+  pointer-events: none;
+}
+.featured-figure figcaption {
+  position: absolute; left: 28px; bottom: 22px; right: 28px;
+  display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+  z-index: 1;
+}
+.featured-eyebrow {
+  font-family: 'Space Grotesk', Inter, sans-serif;
+  font-size: 11px; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--text-3);
+  padding: 6px 12px; border-radius: 999px;
+  background: rgba(7,7,13,.6); border: 1px solid var(--border);
+}
+.featured-line {
+  font-family: 'Space Grotesk', Inter, sans-serif;
+  font-size: clamp(16px, 2.2vw, 22px); color: var(--text);
+  letter-spacing: -.01em;
+}
+.featured-line em {
+  font-style: italic; font-family: 'Space Grotesk', Inter, sans-serif;
+  background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+/* If image fails to load, show a clean placeholder pattern instead */
+.featured-figure.no-img img { display: none; }
+.featured-figure.no-img::before {
+  content: "Save your branded portrait at assets/images/banner.jpg";
+  position: absolute; inset: 0; display: grid; place-items: center;
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 13px; color: var(--text-3); padding: 24px; text-align: center;
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,.06) 1px, transparent 1px);
+  background-size: 36px 36px;
+}
+
 /* ===== Metrics ===== */
 .metric-grid {
   display: grid;
@@ -452,6 +509,43 @@ section { padding: 110px 0; position: relative; }
   box-shadow: 0 0 0 4px rgba(139,92,246,.12);
 }
 .t-card { padding: 28px; }
+.t-media {
+  position: relative; margin: -28px -28px 22px;
+  aspect-ratio: 16 / 9; overflow: hidden;
+  border-top-left-radius: inherit; border-top-right-radius: inherit;
+  background:
+    radial-gradient(120% 100% at 0% 0%, rgba(99,102,241,.4), transparent 60%),
+    radial-gradient(120% 100% at 100% 100%, rgba(6,182,212,.3), transparent 60%),
+    #0d0d18;
+  border-bottom: 1px solid var(--border);
+}
+.t-media img {
+  width: 100%; height: 100%; object-fit: cover; object-position: center 20%;
+  display: block;
+  transition: transform .8s var(--ease);
+}
+.t-card:hover .t-media img { transform: scale(1.03); }
+.t-media::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(7,7,13,0) 55%, rgba(7,7,13,.7) 100%);
+  pointer-events: none;
+}
+.t-media figcaption {
+  position: absolute; left: 18px; bottom: 14px;
+  font-family: 'Space Grotesk', Inter, sans-serif;
+  font-size: 11px; letter-spacing: .18em; text-transform: uppercase;
+}
+.t-media figcaption span {
+  padding: 6px 12px; border-radius: 999px;
+  background: rgba(7,7,13,.65); border: 1px solid var(--border);
+  color: var(--text-2);
+}
+.t-media.no-img img, .t-media.no-img::after, .t-media.no-img figcaption { display: none; }
+.t-media.no-img { aspect-ratio: auto; height: 6px;
+  background: var(--grad); border: 0;
+  margin-bottom: 22px;
+}
+
 .t-card-head {
   display: flex; align-items: flex-start; justify-content: space-between; gap: 18px;
   margin-bottom: 18px;
