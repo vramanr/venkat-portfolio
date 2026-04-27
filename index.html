@@ -324,7 +324,6 @@ plan = agent.from_story(<span class="c-str">"As a QA lead, I want regression on 
               <ul class="t-bullets">
                 <li><strong>Architected Continuum</strong> — proprietary AI testing platform integrating GPT-4o & Gemini for requirements analysis, test case generation, and defect summarization. <em>70% less manual authoring · 35% sprint-velocity boost.</em></li>
                 <li><strong>Launched AutoTestBuilder</strong> — AI-powered test authoring platform with two flagship modules: <em>Test Runner</em> (NL → live browser automation) and <em>Code2Test</em> (legacy code → confidence-scored business rules → exportable test cases). 12+ language support; multi-format export (Excel, JSON, CSV, Gherkin BDD).</li>
-                <li><strong>Shipped RvR Conversion Factory</strong> — end-to-end web suite that turns business docs into functional specs, generates Selenium/TestNG/Cucumber automation, drafts bug reports, and translates code across languages.</li>
                 <li><strong>Engineered MacrosoftAgent</strong> — NLP-driven automation agent with auto DOM-locator generation and Playwright execution, enabling non-technical contributors. <em>10x productivity gains.</em></li>
                 <li><strong>Established the QA Center of Excellence</strong> — governance, KPIs (DRE &gt;95%, coverage &gt;90%), and frameworks adopted across <strong>8 product teams</strong> and <strong>50,000+ users</strong>.</li>
                 <li><strong>Owned Clarivate Analytics QA delivery</strong> as primary POC — 2,000–5,000 regression cases, zero critical escapes across quarterly releases, sub-30-minute feedback loops on Playwright-BDD + GitLab CI/CD.</li>
@@ -388,21 +387,24 @@ plan = agent.from_story(<span class="c-str">"As a QA lead, I want regression on 
             <div class="project-cover" style="--g1:#7c3aed;--g2:#06b6d4">
               <div class="project-mock">
                 <span class="mock-row"></span><span class="mock-row sm"></span><span class="mock-row md"></span>
-                <div class="mock-pill">GPT-4o · Gemini</div>
+                <div class="mock-pill">GPT-4o · Gemini · Multi-LLM</div>
               </div>
             </div>
             <div class="project-body">
               <span class="project-tag">Flagship</span>
-              <h3>Continuum</h3>
-              <p class="project-desc">An AI-powered testing platform that turns requirements into executable tests, runs them, and triages defects autonomously. Built on multi-LLM orchestration with retrieval over historic defects.</p>
+              <h3>Continuum <span class="t-at">·</span> <span class="grad">RvR Conversion Factory</span></h3>
+              <p class="project-desc">An AI-powered platform that runs the full QA lifecycle. Continuum converts business documents into functional specs, generates test cases, builds Selenium / TestNG / Cucumber automation, drafts bug reports, and translates code between languages — orchestrated by multi-LLM agents with retrieval over historic defects.</p>
               <ul class="project-features">
-                <li>LLM test-case generation from user stories</li>
+                <li>Business docs (PDF / Word / image) → functional specs → test cases</li>
+                <li>LLM-powered test-case generation from user stories</li>
+                <li>Selenium / TestNG / Cucumber automation generation</li>
                 <li>Multi-model orchestration: GPT-4o, Gemini, Ollama</li>
-                <li>Vector-grounded defect summarization</li>
+                <li>Vector-grounded defect summarization & bug-report drafting</li>
+                <li>Cross-language code conversion</li>
                 <li>Native CI/CD execution & reporting</li>
               </ul>
               <ul class="chips">
-                <li>Python</li><li>LangChain</li><li>ChromaDB</li><li>Playwright</li><li>GitLab CI</li>
+                <li>Python</li><li>LangChain</li><li>ChromaDB</li><li>Playwright</li><li>Selenium</li><li>TestNG · Cucumber</li><li>GitLab CI</li>
               </ul>
               <div class="project-cta">
                 <a class="btn btn-ghost" href="#contact"><span>Request a Demo</span></a>
@@ -440,34 +442,6 @@ plan = agent.from_story(<span class="c-str">"As a QA lead, I want regression on 
           </article>
 
           <article class="project glass tilt reveal" style="--delay:.12s">
-            <div class="project-cover" style="--g1:#10b981;--g2:#22d3ee">
-              <div class="project-mock">
-                <span class="mock-row md"></span><span class="mock-row sm"></span><span class="mock-row"></span>
-                <div class="mock-pill">Docs · Tests · Scripts · Bugs</div>
-              </div>
-            </div>
-            <div class="project-body">
-              <span class="project-tag">Suite</span>
-              <h3>RvR Conversion Factory</h3>
-              <p class="project-desc">An end-to-end web suite that turns PDFs, Word docs, and images into functional specs, test cases, and automation scripts — and translates code across languages. One-stop assistant for developers, testers, and PMs.</p>
-              <ul class="project-features">
-                <li>Business docs → functional specifications</li>
-                <li>AI-generated test cases & Selenium/TestNG/Cucumber scripts</li>
-                <li>API test-script generation</li>
-                <li>Cross-language code conversion</li>
-                <li>Automated bug-report drafting</li>
-              </ul>
-              <ul class="chips">
-                <li>Selenium</li><li>TestNG</li><li>Cucumber</li><li>LLM</li><li>REST API</li>
-              </ul>
-              <div class="project-cta">
-                <a class="btn btn-ghost" href="#contact"><span>Request a Demo</span></a>
-                <a class="btn btn-link" href="#contact"><span>Learn More</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-              </div>
-            </div>
-          </article>
-
-          <article class="project glass tilt reveal" style="--delay:.18s">
             <div class="project-cover" style="--g1:#06b6d4;--g2:#22d3ee">
               <div class="project-mock">
                 <span class="mock-row md"></span><span class="mock-row"></span><span class="mock-row sm"></span>
@@ -494,8 +468,8 @@ plan = agent.from_story(<span class="c-str">"As a QA lead, I want regression on 
             </div>
           </article>
 
-          <article class="project glass tilt reveal" style="--delay:.24s">
-            <div class="project-cover" style="--g1:#22d3ee;--g2:#0ea5e9">
+          <article class="project glass tilt reveal" style="--delay:.18s">
+            <div class="project-cover" style="--g1:#22d3ee;--g2:#10b981">
               <div class="project-mock">
                 <span class="mock-row sm"></span><span class="mock-row md"></span><span class="mock-row"></span>
                 <div class="mock-pill">DRE · Coverage</div>
@@ -604,13 +578,6 @@ plan = agent.from_story(<span class="c-str">"As a QA lead, I want regression on 
             </span>
             <span class="c-label">LinkedIn</span>
             <a class="c-value" href="https://www.linkedin.com/in/vramanr" target="_blank" rel="noopener">linkedin.com/in/vramanr</a>
-          </li>
-          <li class="glass tilt">
-            <span class="c-ico" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 6a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linejoin="round"/></svg>
-            </span>
-            <span class="c-label">Phone</span>
-            <a class="c-value" href="tel:+919995753077">+91 99957 53077</a>
           </li>
           <li class="glass tilt">
             <span class="c-ico" aria-hidden="true">
